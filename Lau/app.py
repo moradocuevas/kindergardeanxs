@@ -63,5 +63,17 @@ def teamn():
         club.append(t)
     return jsonify(club)
 
+@app.route("/names/<value>")
+def theteam(value):
+    df = pd.read_sql_query(f"SELECT player_name FROM fifa WHERE club = '{value}'", session.bind)
+    #data = {"club":df.club.values.tolist()} 
+    club = []
+    for index, row in df.iterrows():
+        t = {'player_name':row['player_name']}
+        club.append(t)
+    return jsonify(club)
+
+
+
 if __name__ == "__main__":
     app.run()
