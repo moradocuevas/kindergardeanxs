@@ -1,0 +1,53 @@
+body.home {
+    background-color: #252426;
+}
+
+#title{
+    font-family: 'Monoton', cursive;
+    color: white;
+    font-size: 100;
+    text-align: center;
+    margin-top:300px;
+
+}
+
+nav{
+    width: 100%;
+    background-color: black;
+    overflow: auto;
+    font-family: 'Montserrat-Light, Montserrat';
+}
+
+ul{
+    padding: 0%;
+    margin: 0 0 0 150px;
+    text-align: center;
+}
+li{
+    float: left;
+    
+}
+.logo img{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 50px;
+    width: 5%;
+}
+
+nav a{
+    width: 100px;
+    display:block;
+    padding: 35px 60px;
+    text-align: center;
+    text-decoration: none
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+
+}
+
+nav a:hover{
+    background-color: white;
+    transition: 0.5s;
+    text-transform: uppercase;
+
+}
