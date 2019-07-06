@@ -37,7 +37,7 @@ password = "Vargas123"
 app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql://root:{password}@localhost:3306/fifadb?charset=utf8mb4"
 =======
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:Toker1995#@127.0.0.1:3307/fifadb?charset=utf8mb4"
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:Toker1995#@127.0.0.1:3307/fifadb?charset=utf8mb4"
 >>>>>>> 632f4fe95821a95cb2d7c76803de157b531ddc7d
 db = SQLAlchemy(app)
 
