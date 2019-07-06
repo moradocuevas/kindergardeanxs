@@ -32,7 +32,7 @@ app = Flask(__name__)
 #################################################
 # Database Setup
 #################################################
-password = ""
+password = "Vargas123"
 app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql://root:{password}@localhost:3306/fifadb?charset=utf8mb4"
 db = SQLAlchemy(app)
 
