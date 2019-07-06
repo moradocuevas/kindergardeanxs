@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Team vs Team</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Mada|Monoton&display=swap" rel="stylesheet">  
+</head>
+<body class="home">
+  <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <!--Llamar a la base de datos de equipos desde SQL-->
+      <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Team 1">
+        <ul id="myMenu">
+        </ul>
+    </div>
+      <!-- team 2 -->
+    <div id="mySidenav2" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+      <!--Llamar a la base de datos de equipos desde SQL-->
+      <input type="text" id="mySearch2" onkeyup="myFunction2()" placeholder="Search.." title="Team 1">
+        <ul id="myMenu2">
+        </ul>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Team1</span>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav2()">&#9776; Team2</span>
+    <span style="font-size:30px;cursor:pointer"><a href="/">Home</a></span>
+    <span style="font-size:20px;cursor:pointer"><a href="/t_vs_p">Team vs Player</a></span>
+    <span style="font-size:20px;cursor:pointer"><a href="/p_vs_p">Player vs Player</a></span>
+    <span style="font-size:20px;cursor:pointer"><a href="/t_vs_t">Team vs Team</a></span>
+    <!-- <div class="logo"><a href ="#"><img src="logoball.svg"></a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="team_player.html">TEAM|PLAYER</a></li>
+            <li><a href="p_player.html">PLAYER|PLAYER</a></li>
+            <li><a href="a">TEAM|TEAM</a></li>
+
+        </ul>
+    </nav> -->
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 814.7 612">
+        <title>team_team</title>
+        <g id="background">
+          <rect width="792" height="612" style="fill: #252426"/>
+        </g>
+        <g id="medio_circulos_y_negro" data-name="medio circulos y negro">
+          <circle cx="412.04" cy="267.04" r="95" style="fill: none;stroke: #00bf07;stroke-miterlimit: 10;stroke-width: 18px">
+              <animate attributeName="r" from="0" to="95" dur="2s" fill="freeze"/></circle>
+          <circle cx="413.51" cy="267.18" r="121" style="fill: none;stroke: #ffde17;stroke-miterlimit: 10;stroke-width: 18px">
+              <animate attributeName="r" from="0" to="121" dur="2s" fill="freeze"/></circle>
+          <circle cx="412.04" cy="267.04" r="72.15" style="fill: none;stroke: #e82828;stroke-miterlimit: 10;stroke-width: 13px">
+              <animate attributeName="r" from="0" to="75" dur="2s" fill="freeze"/></circle>            
+        </g>
+        <g id="lineablanca">
+          <line x1="412" y1="526" x2="412" y2="94" style="fill: none;stroke: #252426;stroke-miterlimit: 10;stroke-width: 20px"/>
+          <line x1="412" y1="10.11" x2="412" y2="552.11" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 1.5px"/>
+        </g>
+        <g id="points">
+          <ellipse cx="511.45" cy="404.49" rx="5.58" ry="5.66" transform="translate(-103.7 188.18) rotate(-18.97)" style="fill: #ffde17"/>
+          <line x1="500.75" y1="297.56" x2="561.54" y2="315.21" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
+          <ellipse cx="559.2" cy="314.14" rx="5.38" ry="5.82" transform="translate(-57.63 138.31) rotate(-13.42)" style="fill: #00bf07"/>
+          <line x1="463.01" y1="372.58" x2="511.45" y2="404.49" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
+          <line x1="443.15" y1="194.57" x2="502.97" y2="132.86" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
+          <ellipse cx="502.97" cy="132.86" rx="5.66" ry="5.58" style="fill: #e82828"/>
+          <ellipse cx="304.76" cy="402.96" rx="5.66" ry="5.58" transform="translate(-175.37 560.22) rotate(-71.03)" style="fill: #ffde17"/>
+          <line x1="315.46" y1="296.03" x2="254.67" y2="313.68" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
+          <line x1="353.2" y1="371.05" x2="304.76" y2="402.96" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
+          <line x1="373.06" y1="193.04" x2="313.24" y2="131.33" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
+          <ellipse cx="313.24" cy="131.33" rx="5.66" ry="5.58" style="fill: #e82828"/>
+          <ellipse cx="254.67" cy="313.68" rx="5.38" ry="5.82" transform="translate(-65.83 67.65) rotate(-13.42)" style="fill: #00bf07"/>
+        </g>
+        <g id="texto">
+          <text id="w2" transform="translate(568.59 339.7)" style="font-size: 13px;fill: #fff;font-family: Monoton-Regular, Monoton">131,680</text>
+          <text transform="translate(569.29 317.15)" style="font-size: 9px;fill: #fff;font-family: Montserrat-Light, Montserrat;font-weight: 300">SA<tspan x="11.83" y="0" style="letter-spacing: 0.0009765625em">L</tspan><tspan x="17.1" y="0">A</tspan><tspan x="23.44" y="0" style="letter-spacing: -0.009982638888888888em">R</tspan><tspan x="29.83" y="0">Y</tspan></text>
+          <text id="pv2" transform="translate(505.51 447.56)" style="font-size: 13px;fill: #fff;font-family: Monoton-Regular, Monoton">28,179,000</text>
+          <text transform="translate(506.21 425.39)" style="font-size: 9px;fill: #fff;font-family: Montserrat-Light, Montserrat;font-weight: 300">MARKET <tspan x="41.16" y="0" style="letter-spacing: -0.03591579861111111em">V</tspan><tspan x="47.02" y="0">A</tspan><tspan x="53.36" y="0" style="letter-spacing: -0.013997395833333334em">L</tspan><tspan x="58.5" y="0">UE</tspan></text>
+          <path d="M241.44,184" style="fill: none"/>
+          <text id="team1" transform="translate(31.23 235.88)" style="font-size: 18px;fill: #fff;font-family: Monoton-Regular, Monoton">PARIS SAINT-GERMAIN</text>
+          <text id="team2" transform="translate(580.89 235.88)" style="font-size: 18px;fill: #fff;font-family: Monoton-Regular, Monoton">JUVENTUS</text>
+          <text id="a2" transform="translate(513.71 155.16)" style="font-size: 13px;fill: #fff;font-family: Monoton-Regular, Monoton">66</text>
+          <text transform="translate(513.9 135.02)" style="font-size: 9px;fill: #fff;font-family: Montserrat-Light, Montserrat;font-weight: 300"><tspan style="letter-spacing: -0.009982638888888888em">A</tspan><tspan x="6.25" y="0">GGRESION</tspan></text>
+          <text id="a1" transform="translate(258.04 156.15)" style="font-size: 13px;fill: #fff;font-family: Monoton-Regular, Monoton">61</text>
+          <text transform="translate(243.59 136)" style="font-size: 9px;fill: #fff;font-family: Montserrat-Light, Montserrat;font-weight: 300"><tspan style="letter-spacing: -0.009982638888888888em">A</tspan><tspan x="6.25" y="0">GGRESION</tspan></text>
+          <text id="w1" transform="translate(176.52 339.7)" style="font-size: 13px;fill: #fff;font-family: Monoton-Regular, Monoton">72,033</text>
+          <text transform="translate(205.98 317.15)" style="font-size: 9px;fill: #fff;font-family: Montserrat-Light, Montserrat;font-weight: 300">SA<tspan x="11.83" y="0" style="letter-spacing: 0.0009765625em">L</tspan><tspan x="17.1" y="0">A</tspan><tspan x="23.44" y="0" style="letter-spacing: -0.009982638888888888em">R</tspan><tspan x="29.83" y="0">Y</tspan></text>
+          <text id="pv1" transform="translate(276.9 447.56)" style="font-size: 13px;fill: #fff;font-family: Monoton-Regular, Monoton">20,844,166</text>
+          <text transform="translate(239.04 425.39)" style="font-size: 9px;fill: #fff;font-family: Montserrat-Light, Montserrat;font-weight: 300">MARKET <tspan x="41.16" y="0" style="letter-spacing: -0.03591579861111111em">V</tspan><tspan x="47.02" y="0">A</tspan><tspan x="53.36" y="0" style="letter-spacing: -0.013997395833333334em">L</tspan><tspan x="58.5" y="0">UE</tspan></text>
+        </g>
+        <g id="circulo_negro" data-name="circulo negro">
+          <line x1="811.63" y1="127.28" x2="814.7" y2="127.28" style="fill: none"/>
+        </g>
+        <g id="circulo_blanco">
+          <text transform="translate(348.55 319.06)" style="font-size: 130.95089721679688px;fill: #fff;font-family: Monoton-Regular, Monoton">O</text>
+        </g>
+      </svg>
+      
+    </div>
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- d3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <!-- app -->
+    <script src="{{ url_for('static', filename='js/app_tvt.js') }}"></script>
+      
+</body>
+</html>
