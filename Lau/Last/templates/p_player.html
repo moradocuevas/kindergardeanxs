@@ -10,28 +10,44 @@
     <link href="https://fonts.googleapis.com/css?family=Mada|Monoton&display=swap" rel="stylesheet">
 </head>
 <body class="home">
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <!--Llamar a la base de datos de equipos desde SQL-->
-    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Team 1">
-      <ul id="myMenu">
-      </ul>
-  </div>
-    <!-- team 2 -->
-  <div id="mySidenav2" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
-    <!--Llamar a la base de datos de equipos desde SQL-->
-    <input type="text" id="mySearch2" onkeyup="myFunction2()" placeholder="Search.." title="Team 1">
-      <ul id="myMenu2">
-      </ul>
-  </div>
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Team1</span>
-  <span style="font-size:30px;cursor:pointer" onclick="openNav2()">&#9776; Team2</span>
-  <span style="font-size:30px;cursor:pointer"><a href="/">Home</a></span>
-  <span style="font-size:20px;cursor:pointer"><a href="/t_vs_p">Team vs Player</a></span>
-  <span style="font-size:20px;cursor:pointer"><a href="/p_vs_p">Player vs Player</a></span>
-  <span style="font-size:20px;cursor:pointer"><a href="/t_vs_t">Team vs Team</a></span>
-  
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- <a class="navbar-brand" href="#">
+          <img src="{{ url_for('static', filename='multimedia/logoball.svg') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+        </a> -->
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/t_vs_p">T VS P</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/p_vs_p">P VS P</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/t_vs_t">T VS T</a>
+            </li>
+        </ul>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Team 1">
+              <ul id="myMenu">
+              </ul>
+          </div>
+          <div id="mySidenav2" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+            <input type="text" id="mySearch2" onkeyup="myFunction2()" placeholder="Search.." title="Team 1">
+              <ul id="myMenu2">
+              </ul>
+          </div>
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Team1</span>
+          <span style="font-size:30px;cursor:pointer" onclick="openNav2()">&#9776; Team2</span>     
+      </div>
+      </nav>
+
+
+
   <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
       <button type="button" class="btn btn-primary">Players Team 1</button>
       <div class="btn-group show" role="group">
@@ -100,7 +116,7 @@
       <ellipse cx="272.21" cy="426.12" rx="5.58" ry="5.66" transform="translate(-188.78 633.89) rotate(-81.69)" style="fill: #ffde17"/>
       <line x1="245.57" y1="359.35" x2="205.24" y2="331.41" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
       <ellipse cx="205.24" cy="331.41" rx="5.58" ry="5.66" transform="translate(-57.97 43.87) rotate(-10.7)" style="fill: #00bf07"/>
-      <text id="player1" transform="translate(164.09 228.22)" style="font-size: 25.735960006713867px;fill: #fff;font-family: Monoton-Regular, Monoton">LIONEL MESSI</text>
+      <text id="player1" transform="translate(164.09 228.22)" style="font-size: 18px;fill: #fff;font-family: Monoton-Regular, Monoton">LIONEL MESSI</text>
       <text id="a1" transform="translate(234.59 307.69)" style="font-size: 13px;fill: #fff;font-family: Monoton-Regular, Monoton">36%</text>
       <text transform="translate(234.78 287.55)" style="font-size: 9px;fill: #fff;font-family: Montserrat-Light, Montserrat;font-weight: 300"><tspan style="letter-spacing: -0.009982638888888888em">A</tspan><tspan x="6.25" y="0">GGRESION</tspan></text>
       <text id="w1" transform="translate(127.6 345.7)" style="font-size: 13px;fill: #fff;font-family: Monoton-Regular, Monoton">900,000</text>
