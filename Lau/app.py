@@ -32,7 +32,7 @@ app = Flask(__name__)
 #################################################
 # Database Setup
 #################################################
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:1lusionista@127.0.0.1:3306/fifadb?charset=utf8mb4"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/fut.sqlite"
 db = SQLAlchemy(app)
 
 # reflect an existing database into a new model
