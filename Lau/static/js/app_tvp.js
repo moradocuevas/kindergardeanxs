@@ -1,5 +1,5 @@
 function init(){
-    console.log('hello world 4')
+    console.log('hello world 12')
     //agregar a la lista de equipos
     var selector = d3.select('#myMenu');
     d3.json("/names").then((club) => {
@@ -16,10 +16,6 @@ function init(){
 init();
 
 //formating
-// function format(string){
-//     var s = String(string).replace(/(.)(?=(\d{3})+$)/g,'$1,');
-//     return s;
-// };
 
 var format = function(n, dp){
     var e = '', s = e+n, l = s.length, b = n < 0 ? 1 : 0,
@@ -29,6 +25,14 @@ var format = function(n, dp){
     return s.substr(0, j + 3) + r + 
       (dp ? '.' + d + ( d.length < dp ? 
           ('00000').substr(0, dp - d.length):e):e);
+};
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+};
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
 };
 
 // función para buscar en la lista de equipos
@@ -46,6 +50,12 @@ function myFunction() {
         li[i].style.display = "none";
         }
     }
+};
+
+//SIII
+function play(){
+    var audio = document.getElementById("cristiano_ronaldo");
+    audio.play();
 };
 
 function mean(arr) {
@@ -97,6 +107,9 @@ function equipo(value){
 };
 
 function player(value){
+    if(value === "Cristiano Ronaldo"){
+        play();
+    };
     d3.json(`/names/player/${value}`).then((players) => {
     var p_overall = players.overall[0];
     var p_wage = players.wage[0];
@@ -106,7 +119,7 @@ function player(value){
     d3.select('#nationality').text(n_nationality);
     //scalar
     var w_overall = p_overall * 3.6;
-    var w_wage = p_wage * (360/max_w);//cambiar
+    var w_wage = p_wage * (360/max_w);
     var w_aggression = p_aggression * 3.6;
     //modificar width y testo
     d3.select("#rect-red").attr("width",w_aggression);
