@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Mada|Monoton&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="home">
   <!--Side navigation bar MODIFICADO DIANA-->
-  <nav class="inline">
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <!--Llamar a la base de datos de equipos desde SQL-->
@@ -20,6 +19,10 @@
       </ul>
   </div>
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Teams</span>
+  <span style="font-size:30px;cursor:pointer"><a href="/">Home</a></span>
+  <span style="font-size:20px;cursor:pointer"><a href="/t_vs_p">Team vs Player</a></span>
+  <span style="font-size:20px;cursor:pointer"><a href="/p_vs_p">Player vs Player</a></span>
+  <span style="font-size:20px;cursor:pointer"><a href="/t_vs_t">Team vs Team</a></span>
   <!-- Use any element to open the sidenav -->
   <span onclick="openNav()">open</span>
   <!--Get search tool into sidebar-->
@@ -33,8 +36,6 @@
       </div>
     </div>
   </div>
-</nav>
-
 
   <!--End of Side bar code-->
       <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->

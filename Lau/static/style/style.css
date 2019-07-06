@@ -3,6 +3,9 @@ body.home {
     background-image: "fut2.jpg";
 }
 
+span a {
+  color: white;
+}
 
 #futtitle{
     font-family: 'Monoton', cursive;

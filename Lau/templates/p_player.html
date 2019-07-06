@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Mada|Monoton&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="home">
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <!--Llamar a la base de datos de equipos desde SQL-->
@@ -26,7 +26,11 @@
       </ul>
   </div>
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Team1</span>
-  <span style="font-size:30px;cursor:pointer" onclick="openNav2()">&#9776; team2</span>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav2()">&#9776; Team2</span>
+  <span style="font-size:30px;cursor:pointer"><a href="/">Home</a></span>
+  <span style="font-size:20px;cursor:pointer"><a href="/t_vs_p">Team vs Player</a></span>
+  <span style="font-size:20px;cursor:pointer"><a href="/p_vs_p">Player vs Player</a></span>
+  <span style="font-size:20px;cursor:pointer"><a href="/t_vs_t">Team vs Team</a></span>
   
   <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
       <button type="button" class="btn btn-primary">Players Team 1</button>
