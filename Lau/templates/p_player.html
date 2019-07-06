@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Player vs Player</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Mada|Monoton&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <!--Llamar a la base de datos de equipos desde SQL-->
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Team 1">
+      <ul id="myMenu">
+      </ul>
+  </div>
+    <!-- team 2 -->
+  <div id="mySidenav2" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+    <!--Llamar a la base de datos de equipos desde SQL-->
+    <input type="text" id="mySearch2" onkeyup="myFunction2()" placeholder="Search.." title="Team 1">
+      <ul id="myMenu2">
+      </ul>
+  </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Team1</span>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav2()">&#9776; team2</span>
+  
+  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <button type="button" class="btn btn-primary">Players Team 1</button>
+      <div class="btn-group show" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
+        <div id="playerslist" class="dropdown-menu show" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+  
+        </div>
+      </div>
+    </div>
+    <!-- el segun -->
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <button type="button" class="btn btn-primary">Players Team 2</button>
+      <div class="btn-group show" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
+        <div id="playerslist2" class="dropdown-menu show" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+  
+        </div>
+      </div>
+    </div>
+
+  <!-- diana end -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 792 612">
+    <title>futplayers2</title>
+    <g id="background">
+      <rect width="792" height="612" style="fill: #252426"/>
+    </g>
+    <g id="Layer_8" data-name="Layer 8">
+      <line x1="416" y1="531" x2="416" y2="99" style="fill: none;stroke: #252426;stroke-miterlimit: 10;stroke-width: 26px"/>
+      <line x1="412" y1="37.34" x2="412" y2="579.34" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 1.5px"/>
+    </g>
+    <g id="lineas">
+      <path d="M264.39,184" style="fill: none"/>
+      <path d="M498.9,169.88" style="fill: none;stroke: #e5102a;stroke-miterlimit: 10;stroke-width: 9px"/>
+      <rect id="red1" x="60" y="333.83" width="310" height="17.91" style="fill: #e82828"/>
+      <rect id="green1" x="60" y="356.54" width="310" height="18.04" style="fill: #00bf07"/>
+      <rect id="yellow1" x="60" y="382.59" width="310" height="17.96" style="fill: #ffde17"/>
+      <rect id="red2" x="400" y="333.6" width="360" height="17.91" style="fill: #e82828"/>
+      <rect id="green2" x="400" y="356.54" width="360" height="18.04" style="fill: #00bf07"/>
+      <rect id="yellow2" x="400" y="382.59" width="360" height="17.96" style="fill: #ffde17"/>
+    </g>
+    <g id="points">
+      <circle cx="698.09" cy="145.09" r="5.97" style="fill: #fff"/>
+      <line x1="517.11" y1="342.79" x2="552.06" y2="308.34" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
+      <ellipse cx="552.06" cy="308.34" rx="5.66" ry="5.58" style="fill: #e82828"/>
+      <line x1="518.67" y1="401.39" x2="560.29" y2="427.39" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
+      <ellipse cx="560.29" cy="427.39" rx="5.58" ry="5.66" transform="translate(-83.87 141.66) rotate(-13.42)" style="fill: #ffde17"/>
+      <line x1="557.4" y1="366.76" x2="599.01" y2="392.76" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
+      <ellipse cx="599.01" cy="392.76" rx="5.58" ry="5.66" transform="translate(-74.78 149.7) rotate(-13.42)" style="fill: #00bf07"/>
+    </g>
+    <ellipse cx="414.47" cy="363.87" rx="56.7" ry="57.87" style="fill: #252426"/>
+    <g id="texto">
+      <text id="player2" transform="translate(464.31 249.49)" style="font-size: 25.735960006713867px;fill: #fff;font-family: Monoton-Regular, Monoton">POGBA</text>
+      <text id="country2" transform="translate(587.77 175.46)" style="font-size: 19.301969528198242px;fill: #fff;font-family: Monoton-Regular, Monoton">FRANCIA</text>
+      <text transform="translate(640.99 151.06)" style="font-size: 9px;fill: #fff;font-family: Montserrat-Light, Montserrat;font-weight: 300"><tspan style="letter-spacing: -0.015082465277777778em">C</tspan><tspan x="6.31" y="0">OUNT</tspan><tspan x="33.38" y="0" style="letter-spacing: -0.009982638888888888em">R</tspan><tspan x="39.77" y="0">Y</tspan></text>
+      <text id="a2" transform="translate(565.02 302.76)" style="font-size: 13px;fill: #fff;font-family: Monoton-Regular, Monoton">80%</text>
+      <text transform="translate(565.22 282.62)" style="font-size: 9px;fill: #fff;font-family: Montserrat-Light, Montserrat;font-weight: 300"><tspan style="letter-spacing: -0.009982638888888888em">A</tspan><tspan x="6.25" y="0">GGRESION</tspan></text>
+      <text id="w2" transform="translate(598.66 431.7)" style="font-size: 13px;fill: #fff;font-family: Monoton-Regular, Monoton">450,000</text>
+      <text transform="translate(599.36 410.46)" style="font-size: 9px;fill: #fff;font-family: Montserrat-Light, Montserrat;font-weight: 300">SA<tspan x="11.83" y="0" style="letter-spacing: 0.0009765625em">L</tspan><tspan x="17.1" y="0">A</tspan><tspan x="23.44" y="0" style="letter-spacing: -0.009982638888888888em">R</tspan><tspan x="29.83" y="0">Y</tspan></text>
+      <text id="pv2" transform="translate(534.59 467.53)" style="font-size: 13px;fill: #fff;font-family: Monoton-Regular, Monoton">90M</text>
+      <circle cx="60.15" cy="145.09" r="5.97" style="fill: #fff"/>
+      <text id="country1" transform="translate(54.17 175.46)" style="font-size: 19.301969528198242px;fill: #fff;font-family: Monoton-Regular, Monoton">ARGENTINA</text>
+      <text transform="translate(71.03 151.06)" style="font-size: 9px;fill: #fff;font-family: Montserrat-Light, Montserrat;font-weight: 300"><tspan style="letter-spacing: -0.015082465277777778em">C</tspan><tspan x="6.31" y="0">OUNT</tspan><tspan x="33.38" y="0" style="letter-spacing: -0.009982638888888888em">R</tspan><tspan x="39.77" y="0">Y</tspan></text>
+      <line x1="318.02" y1="340.47" x2="283.57" y2="305.53" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
+      <ellipse cx="283.57" cy="305.53" rx="5.58" ry="5.66" style="fill: #e82828"/>
+      <line x1="311.76" y1="397.09" x2="272.21" y2="426.12" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
+      <ellipse cx="272.21" cy="426.12" rx="5.58" ry="5.66" transform="translate(-188.78 633.89) rotate(-81.69)" style="fill: #ffde17"/>
+      <line x1="245.57" y1="359.35" x2="205.24" y2="331.41" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
+      <ellipse cx="205.24" cy="331.41" rx="5.58" ry="5.66" transform="translate(-57.97 43.87) rotate(-10.7)" style="fill: #00bf07"/>
+      <text id="player1" transform="translate(164.09 228.22)" style="font-size: 25.735960006713867px;fill: #fff;font-family: Monoton-Regular, Monoton">LIONEL MESSI</text>
+      <text id="a1" transform="translate(234.59 307.69)" style="font-size: 13px;fill: #fff;font-family: Monoton-Regular, Monoton">36%</text>
+      <text transform="translate(234.78 287.55)" style="font-size: 9px;fill: #fff;font-family: Montserrat-Light, Montserrat;font-weight: 300"><tspan style="letter-spacing: -0.009982638888888888em">A</tspan><tspan x="6.25" y="0">GGRESION</tspan></text>
+      <text id="w1" transform="translate(127.6 345.7)" style="font-size: 13px;fill: #fff;font-family: Monoton-Regular, Monoton">900,000</text>
+      <text transform="translate(157.91 328.45)" style="font-size: 9px;fill: #fff;font-family: Montserrat-Light, Montserrat;font-weight: 300">SA<tspan x="11.83" y="0" style="letter-spacing: 0.0009765625em">L</tspan><tspan x="17.1" y="0">A</tspan><tspan x="23.44" y="0" style="letter-spacing: -0.009982638888888888em">R</tspan><tspan x="29.83" y="0">Y</tspan></text>
+      <text id="pv1" transform="translate(261.35 470.26)" style="font-size: 13px;fill: #fff;font-family: Monoton-Regular, Monoton">152</text>
+      <text transform="translate(262.05 448.1)" style="font-size: 9px;fill: #fff;font-family: Montserrat-Light, Montserrat;font-weight: 300">MARKET <tspan x="41.16" y="0" style="letter-spacing: -0.03591579861111111em">V</tspan><tspan x="47.02" y="0">A</tspan><tspan x="53.36" y="0" style="letter-spacing: -0.013997395833333334em">L</tspan><tspan x="58.5" y="0">UE</tspan></text>
+      <text transform="translate(350 418.47)" style="font-size: 137.96800231933594px;fill: #fff;font-family: Monoton-Regular, Monoton">O</text>
+      <text transform="translate(498.9 448.1)" style="font-size: 9px;fill: #fff;font-family: Montserrat-Light, Montserrat;font-weight: 300">MARKET <tspan x="41.16" y="0" style="letter-spacing: -0.03591579861111111em">V</tspan><tspan x="47.02" y="0">A</tspan><tspan x="53.36" y="0" style="letter-spacing: -0.013997395833333334em">L</tspan><tspan x="58.5" y="0">UE</tspan></text>
+    </g>
+  </svg>
+  <audio id="cristiano_ronaldo" src="{{url_for('static', filename='multimedia/cristiano_ronaldo.mp3')}}" ></audio>
+  <!-- librerías -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- d3 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <!-- app -->
+  <script src="{{ url_for('static', filename='js/app_pvp.js') }}"></script>
+</body>
+</html>

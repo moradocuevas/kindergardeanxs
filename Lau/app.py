@@ -32,8 +32,8 @@ app = Flask(__name__)
 #################################################
 # Database Setup
 #################################################
-password = ""
-app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql://root:{password}@localhost:3306/fifadb?charset=utf8mb4"
+
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:Toker1995#@127.0.0.1:3307/fifadb?charset=utf8mb4"
 db = SQLAlchemy(app)
 
 # reflect an existing database into a new model
@@ -47,6 +47,18 @@ fifa = Base.classes.fifa
 @app.route("/")
 def index():
     return render_template("index.html")
+
+@app.route("/t_vs_p")
+def tvp():
+    return render_template("teams_p.html")
+
+@app.route("/p_vs_p")
+def pvp():
+    return render_template("p_player.html")
+
+@app.route("/t_vs_t")
+def tvt():
+    return render_template("team_ts.html")
 
 # @app.route("/fifa")
 # def player():
@@ -81,23 +93,25 @@ def teamn():
 def theteam(value):
     # stmt = db.session.query(fifa.club).distinct().all()
     # df = pd.read_sql_query(f"SELECT player_name, overall, wage, player_value FROM fifa WHERE club = '{value}' ORDER BY overall DESC", session.bind)
-    df = pd.read_sql_query(f"SELECT player_name, overall, wage, aggression FROM fifa WHERE club = '{value}' ORDER BY overall DESC", db.session.bind)
+    df = pd.read_sql_query(f"SELECT player_name, overall, wage, aggression, player_value FROM fifa WHERE club = '{value}' ORDER BY overall DESC", db.session.bind)
     club = []
     for index, row in df.iterrows():
         t = {'player_name':row['player_name'], 'overall':row['overall'], 
-        'wage':row['wage'], 'aggression':row['aggression']}
+        'wage':row['wage'], 'aggression':row['aggression'],
+        'player_value':row['player_value']}
         club.append(t)
     return jsonify(club)
 
 @app.route("/names/player/<value>")
 def theplayer(value):
-    df = pd.read_sql_query(f"SELECT player_name, overall, wage, aggression, nationality FROM fifa WHERE player_name = '{value}'", db.session.bind)
+    df = pd.read_sql_query(f"SELECT player_name, overall, wage, aggression, nationality, player_value FROM fifa WHERE player_name = '{value}'", db.session.bind)
     p = {
         'player_name':df.player_name.values.tolist(),
         'overall':df.overall.values.tolist(),
         'aggression':df.aggression.values.tolist(),
         'wage':df.wage.values.tolist(),
-        'nationality': df.nationality.values.tolist()
+        'nationality': df.nationality.values.tolist(),
+        'player_value': df.player_value.values.tolist()
     }
     return jsonify(p)
 
