@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Futballe</title> 
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Mada|Monoton&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!--Navbar-->
+  <div class="logo"><a href ="#"><img src="logoball.svg"></a>
+  </div>
+  <nav>
+      <ul id="homeList">
+          <li><a href="#">HOME</a></li>
+          <li><a href="a">TEAM|PLAYER</a></li>
+          <li><a href="p_player.html">PLAYER|PLAYER</a></li>
+          <li><a href="team_ts.html">TEAM|TEAM</a></li>
+      </ul>
+  </nav>
+
+    <ul id="mySidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Team 1">
+      <li><div class="myMenu">
+        <div class="background">
+          <img src="http://www.sclance.com/pngs/soccer-field-png/soccer_field_png_1270963.png"> 
+        </div>
+        <a href="#name"><span class="white-text name">FOOTBALL DATA</span></a>
+      </div></li>
+      <li><a href="#!">Team1</a></li>
+      <li><a href="#!">Team2</a></li>
+      <li><a href="#!">Players Team 1</a></li>
+      <li><a href="#!">Players Team 2</a></li>
+    </ul>
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i>menu</i></a>
+  
+    Llamar a la base de datos de equipos desde SQL
+      <ul id="myMenu">
+        <li><a href="#">Jamaica</a></li>
+        <li><a href="#">México</a></li>
+        <li><a href="#">Dominica</a></li>
+        <li><a href="#">post Malone</a></li>
+      </ul>
+  </div>
+  team 2 -->
+  <div id="mySidenav2" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+    <!--Llamar a la base de datos de equipos desde SQL-->
+    <input type="text" id="mySearch2" onkeyup="myFunction2()" placeholder="Search.." title="Team 1">
+      <ul id="myMenu2">
+        <li><a href="#">Marrueco</a></li>
+        <li><a href="#">Cristiano Ronaldo</a></li>
+        <li><a href="#">Dale</a></li>
+        <li><a href="#">Brasil</a></li>
+      </ul>
+  </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Team1</span>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav2()">&#9776; team2</span>
+  <!-- end lauro -->
+  <script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  function openNav2() {
+    document.getElementById("mySidenav2").style.width = "250px";
+  }
+  function closeNav2() {
+    document.getElementById("mySidenav2").style.width = "0";
+  }
+  function myFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("mySearch");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myMenu");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+        } else {
+        li[i].style.display = "none";
+        }
+    }
+  };
+  function myFunction2() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("mySearch2");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myMenu2");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+        } else {
+        li[i].style.display = "none";
+        }
+    }
+  };
+  </script>
+  <!-- Use any element to open the sidenav -->
+  <!--Get search tool into sidebar-->
+  <!-- dropdown para jugadores -->
+  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-primary">Players Team 1</button>
+    <div class="btn-group show" role="group">
+      <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
+      <div class="dropdown-menu show" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+
+      </div>
+    </div>
+  </div>
+  <!-- el segun -->
+  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-primary">Players Team 2</button>
+    <div class="btn-group show" role="group">
+      <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
+      <div class="dropdown-menu show" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+
+      </div>
+    </div>
+  </div>
+
+  <!--End of Side bar code-->
+      <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+      </div>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width= 100% height=100% viewBox="0 0 792 612">
+            <defs>
+              <linearGradient id="linear-gradient" x1="125.02" y1="426.96" x2="137.34" y2="426.96" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#ed1c24"/>
+                <stop offset="1" stop-color="#a21c24"/>
+              </linearGradient>
+            </defs>
+            <title>fut</title>
+            <g id="background">
+              <rect width="792" height="612" style="fill: #252426"/>
+            </g>
+            <g id="medio_circulos_y_negro" data-name="medio circulos y negro">
+              <ellipse cx="200.26" cy="284.31" rx="102" ry="103.72" style="fill: none;stroke: #00bf07;stroke-miterlimit: 10;stroke-width: 18px"/>
+              <ellipse cx="201.86" cy="284.46" rx="129.86" ry="131.76" style="fill: none;stroke: #ffde17;stroke-miterlimit: 10;stroke-width: 18px"/>
+              <circle cx="205.16" cy="284.46" r="78.5" style="fill: none;stroke: #e82828;stroke-miterlimit: 10;stroke-width: 18px"/>
+              <polygon points="205.16 116 205.16 445 390 445 390 132.59 205.16 116" style="fill: #252426"/>
+            </g>
+            <g id="lineas">
+              <path d="M284.41,191" style="fill: none"/>
+              <path d="M539.55,175.59" style="fill: none;stroke: #e5102a;stroke-miterlimit: 10;stroke-width: 9px"/>
+              <rect x="202.73" y="353.99" width="203.37" height="17.93" style="fill: #e82828"/>
+              <rect x="204.16" y="379.06" width="200.71" height="17.93" style="fill: #00bf07"/>
+              <rect x="202.25" y="407.26" width="204.16" height="17.93" style="fill: #ffde17"/>
+            </g>
+            <!-- Estas son la gráficas -->
+            <g id="grafica_lineas" data-name="grafica lineas">
+              <rect id="rect-aggression" x="420" y="353.99" width="360" height="17.93" style="fill: #e82828"><animate attributeName="width" from="0" to="360" dur="1s" /></rect>
+              <rect x="400" y="379.06" width="300.96" height="17.93" style="fill: #00bf07"/>
+              <rect x="400" y="407.26" width="156.45" height="17.93" style="fill: #ffde17"/>
+            </g>
+            <g id="points">
+              <g>
+                <line x1="194" y1="365.03" x2="131.18" y2="426.96" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 1.35639607906342px"/>
+                <ellipse cx="131.18" cy="426.96" rx="6.16" ry="6.07" style="fill: url(#linear-gradient)"/>
+              </g>
+              <line x1="106" y1="193.75" x2="68.52" y2="155.73" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
+              <ellipse cx="68.52" cy="155.73" rx="6.07" ry="6.16" style="fill: #ffde17"/>
+              <line x1="200.26" y1="183.67" x2="238.28" y2="146.19" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
+              <ellipse cx="238.28" cy="146.19" rx="6.16" ry="6.07" style="fill: #00bf07"/>
+              <circle cx="756.26" cy="526" r="6.5" style="fill: #fff"/>
+            </g>
+            <g id="texto">
+              <text transform="translate(162.59 276.95)" style="font-size: 28px;fill: #fff;font-family: Monoton-Regular, Monoton">MANCHESTER<tspan x="0" y="33.6">UNITED</tspan></text>
+              <text transform="translate(582 274.05)" style="font-size: 28px;fill: #fff;font-family: Monoton-Regular, Monoton">POGBA</text>
+              <text transform="translate(636.24 559.05)" style="font-size: 21px;fill: #fff;font-family: Monoton-Regular, Monoton">FRANCIA /<tspan x="28.38" y="25.2">GUINEA</tspan></text>
+              <text id="team-yellow" transform="translate(100.76 489.05)" style="font-size: 26px;fill: #fff;font-family: Monoton-Regular, Monoton">45%</text>
+              <text transform="translate(95.76 457)" style="font-size: 15px;fill: #fff;font-family: adineuePRO-Light, adineuePRO Light;font-weight: 300"><tspan style="letter-spacing: -0.015006510416666667em">A</tspan><tspan x="8.96" y="0">GGRESION</tspan></text>
+              <text transform="translate(252.76 168.72)" style="font-size: 26px;fill: #fff;font-family: Monoton-Regular, Monoton">450,000</text>
+              <text transform="translate(252.76 140.12)" style="font-size: 15px;fill: #fff;font-family: adineuePRO-Light, adineuePRO Light;font-weight: 300">SALA<tspan x="32.83" y="0" style="letter-spacing: -0.010970052083333333em">R</tspan><tspan x="40.74" y="0">Y</tspan></text>
+              <text id="team-red" transform="translate(33.76 132.02)" style="font-size: 26px;fill: #fff;font-family: Monoton-Regular, Monoton">45%</text>
+              <!-- nuevos -->
+              <text transform="translate(440 353.99)" style="font-size: 10px;fill: #fff;font-family: adineuePRO-Light, adineuePRO Light;">45%</text>
+              <text transform="translate(440 379.06)" style="font-size: 10px;fill: #fff;font-family: adineuePRO-Light, adineuePRO Light;">45%</text>
+              <text transform="translate(440 407.26)" style="font-size: 10px;fill: #fff;font-family: adineuePRO-Light, adineuePRO Light;">45%</text>
+              <!-- yep -->
+              <text transform="translate(28.76 99.98)" style="font-size: 15px;fill: #fff;font-family: adineuePRO-Light, adineuePRO Light;font-weight: 300"><tspan style="letter-spacing: -0.015006510416666667em">A</tspan><tspan x="8.96" y="0">GGRESION</tspan></text>
+              <text transform="translate(680.99 532.5)" style="font-size: 15px;fill: #fff;font-family: adineuePRO-Light, adineuePRO Light;font-weight: 300"><tspan style="letter-spacing: -0.02099609375em">C</tspan><tspan x="8.38" y="0">OUNT</tspan><tspan x="45.75" y="0" style="letter-spacing: -0.011002604166666667em">R</tspan><tspan x="53.65" y="0">Y</tspan></text>
+            </g>
+            <g id="linea_blanca" data-name="linea blanca">
+              <line x1="412" y1="526" x2="412" y2="94" style="fill: none;stroke: #252426;stroke-miterlimit: 10;stroke-width: 26px"/>
+              <line x1="412" y1="35" x2="412" y2="577" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 1.5px"/>
+            </g>
+            
+          </svg>
+          
+  </div>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- d3 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <!-- app -->
+  <!-- <script src="static/js/app.js"></script> -->
+</body>
+</html>
+
