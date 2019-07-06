@@ -32,7 +32,7 @@ app = Flask(__name__)
 #################################################
 # Database Setup
 #################################################
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/fut.sqlite"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/fut.db"
 db = SQLAlchemy(app)
 
 # reflect an existing database into a new model
